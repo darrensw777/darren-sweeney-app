@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import TabNavigator from './src/navigation/TabNavigator';
-import { SafeAreaView, View } from 'react-native';
+import { Platform, SafeAreaView, View } from 'react-native';
 import appConfig from './src/utils/appConfig';
 import * as Font from "expo-font";
 import { useFonts } from 'expo-font';
@@ -45,7 +45,7 @@ const App: React.FC = () => {
     }
 
     return (
-        <View style={{ flex: 1, padding: 20 }}>
+        <View style={{ flex: 1, padding: Platform.OS === 'android' ? 10 : 20 }}>
             <SafeAreaView
                 onLayout={onLayoutRootView}
                 style={{ flex: 1, backgroundColor: appConfig.colors.primary, padding: 20 }}

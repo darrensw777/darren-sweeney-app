@@ -25,13 +25,13 @@ const PageBanner = ({ pageTitle, pageSubTitle }: PageBannerProps): ReactElement 
 const styles = StyleSheet.create({
     banner: {
         backgroundColor: 'white',
-        height: 90,
+        height: 60,
         justifyContent: 'center',
         alignItems: 'center',
         borderTopWidth: 4,
-        borderTopColor: '#ccc',
+        borderTopColor: appConfig.colors.border,
         borderBottomWidth: 4,
-        borderBottomColor: '#ccc',
+        borderBottomColor: appConfig.colors.border,
         marginBottom: 20
     },
     bannerText: {
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     },
     subTitle: {
         borderLeftWidth: 4,
-        borderLeftColor: '#ccc',
+        borderLeftColor: appConfig.colors.border,
         paddingLeft: 10,
         marginBottom: 20
     }

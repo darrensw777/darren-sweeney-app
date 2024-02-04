@@ -22,18 +22,22 @@ const WorkScreen = ({ navigation }: any): ReactElement => {
             <FullWidthImage
                 image={require('../../assets/images/cv/ds1.webp')}
                 padding={20}
+                marginTop={0}
             />
             <FullWidthImage
                 image={require('../../assets/images/cv/ds2.webp')}
                 padding={20}
+                marginTop={0}
             />
             <FullWidthImage
                 image={require('../../assets/images/cv/ds3.webp')}
                 padding={20}
+                marginTop={0}
             />
             <FullWidthImage
                 image={require('../../assets/images/cv/ds4.webp')}
                 padding={20}
+                marginTop={0}
             />
         </ScrollView>
     );
@@ -43,12 +47,12 @@ const styles = StyleSheet.create({
     contactLink: {
         padding: 20,
         borderWidth: 1,
-        borderColor: '#333',
+        borderColor: appConfig.colors.border,
         margin: 20,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 5,
-        backgroundColor: '#ccc'
+        backgroundColor: appConfig.colors.lightGreyBg
     }
 });
 

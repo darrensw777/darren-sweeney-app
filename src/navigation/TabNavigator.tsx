@@ -30,19 +30,26 @@ const TabNavigator: React.FC = () => {
                 tabBarShowLabel: false,
                 tabBarStyle: {
                     backgroundColor: appConfig.colors.primary,
-                    borderTopWidth: 0
+                    borderTopWidth: 0,
+                    elevation: 0
                 },
                 tabBarInactiveTintColor: '#fff',
                 tabBarActiveTintColor: '#fff',
                 headerShadowVisible: false,
+                headerTitleAlign: 'center',
+                headerTitleStyle: {
+                    // fontWeight: 'bold',
+                    fontSize: 30,
+                    fontFamily: 'RobotoSlab',
+                },
             }}
         >
             <Tab.Screen
                 name="HomeStack"
                 component={HomeStack}
                 options={() => ({
-                    headerTitle: '',
-                    headerTitleStyle: { ...headerStyles },
+                    // headerTitle: '',
+                    // headerTitleStyle: { ...headerStyles },
                     tabBarStyle: {
                         backgroundColor: appConfig.colors.primary,
                     },
@@ -62,7 +69,7 @@ const TabNavigator: React.FC = () => {
                 name="AboutStack"
                 component={AboutScreen}
                 options={{
-                    headerTitle: 'About',
+                    headerTitle: appConfig.siteSettings.name,
                     headerShown: true,
                     headerTitleStyle: { ...headerStyles },
                     tabBarIcon: ({ size }) => (
@@ -82,7 +89,7 @@ const TabNavigator: React.FC = () => {
                 name="WorkStack"
                 component={WorkScreen}
                 options={{
-                    headerTitle: 'Work',
+                    headerTitle: appConfig.siteSettings.name,
                     headerShown: true,
                     headerTitleStyle: { ...headerStyles },
                     tabBarIcon: ({ size }) => (
@@ -102,7 +109,7 @@ const TabNavigator: React.FC = () => {
                 name="GalleryStack"
                 component={GalleryScreen}
                 options={{
-                    headerTitle: 'Gallery',
+                    headerTitle: appConfig.siteSettings.name,
                     headerShown: true,
                     headerTitleStyle: { ...headerStyles },
                     tabBarIcon: ({ size }) => (
@@ -122,7 +129,7 @@ const TabNavigator: React.FC = () => {
                 name="VideoStack"
                 component={VideoScreen}
                 options={{
-                    headerTitle: 'Video',
+                    headerTitle: appConfig.siteSettings.name,
                     headerShown: true,
                     headerTitleStyle: { ...headerStyles },
                     tabBarIcon: ({ size }) => (
@@ -142,7 +149,7 @@ const TabNavigator: React.FC = () => {
                 name="ContactStack"
                 component={ContactScreen}
                 options={{
-                    headerTitle: 'Contact',
+                    headerTitle: appConfig.siteSettings.name,
                     headerShown: true,
                     headerTitleStyle: { ...headerStyles },
                     tabBarIcon: ({ size }) => (

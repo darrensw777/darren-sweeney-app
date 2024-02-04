@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
         fontFamily: 'Dosis',
         color: appConfig.colors.textColor,
         fontSize: appConfig.siteSettings.fontSize,
-        fontWeight: 'bold'
     }
 });
 

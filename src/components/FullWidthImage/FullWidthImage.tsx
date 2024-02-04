@@ -11,11 +11,12 @@ import {
 interface FullWidthImageProps {
     image: ImageSourcePropType;
     padding: number;
+    marginTop: number;
 }
 
 const win = Dimensions.get('window');
 
-const FullWidthImage = ({ image, padding }: FullWidthImageProps): ReactElement => {
+const FullWidthImage = ({ image, padding, marginTop }: FullWidthImageProps): ReactElement => {
     const [imageLoading, setIsImageLoading] = useState(true);
     const { width: imageWidth, height: imageHeight } = Image.resolveAssetSource(image);
 
@@ -40,7 +41,8 @@ const FullWidthImage = ({ image, padding }: FullWidthImageProps): ReactElement =
             resizeMode: "contain",
             alignSelf: "center",
             marginLeft: padding,
-            marginBottom: padding,
+            borderRadius: 10,
+            marginTop,
         }
     });
 

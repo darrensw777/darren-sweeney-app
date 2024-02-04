@@ -15,7 +15,7 @@ interface DataProps {
 
 const GalleryImages = ({ data }: DataProps) => {
     const Images = data.map((item, idx) => {
-        return <FullWidthImage key={`galleryImage_${idx}`} image={item.src} />;
+        return <FullWidthImage key={`galleryImage_${idx}`} image={item.src} padding={0} marginTop={20} />;
     }
     );
     return (
@@ -28,9 +28,9 @@ const GalleryImages = ({ data }: DataProps) => {
 };
 
 const renderScene = SceneMap({
-    first: () => <GalleryImages data={appConfig.galleryImages.performing} />,
-    second: () => <GalleryImages data={appConfig.galleryImages.atSea} />,
-    third: () => <GalleryImages data={appConfig.galleryImages.misc} />
+    first: () => <GalleryImages data={appConfig.galleryImages.me} />,
+    second: () => <GalleryImages data={appConfig.galleryImages.theBoys} />,
+    third: () => <GalleryImages data={appConfig.galleryImages.singing} />
 });
 
 export default function TabViewComponent() {
@@ -38,9 +38,9 @@ export default function TabViewComponent() {
 
     const [index, setIndex] = React.useState(0);
     const [routes] = React.useState([
-        { key: 'first', title: 'Performing' },
-        { key: 'second', title: 'At sea' },
-        { key: 'third', title: 'Misc' },
+        { key: 'first', title: 'Me!' },
+        { key: 'second', title: 'My boys' },
+        { key: 'third', title: 'Singing' },
     ]);
 
     return (
@@ -51,8 +51,10 @@ export default function TabViewComponent() {
             initialLayout={{ width: layout.width }}
             renderTabBar={props => <TabBar
                 {...props}
-                style={{ backgroundColor: appConfig.colors.primary }}
-                indicatorStyle={{ backgroundColor: 'white', height: 2 }}
+                style={{ backgroundColor: appConfig.colors.lightGreyBg, borderTopLeftRadius: 10, borderTopRightRadius: 10 }}
+                activeColor={appConfig.colors.textColor}
+                inactiveColor={appConfig.colors.textColor}
+                indicatorStyle={{ backgroundColor: '#333', height: 2 }}
             />}
         />
     );

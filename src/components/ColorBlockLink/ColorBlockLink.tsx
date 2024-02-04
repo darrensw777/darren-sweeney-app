@@ -63,10 +63,11 @@ const styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: 20
+        marginBottom: 20,
+        padding: 0,
     },
     colorBlock: {
-        width: '90%',
+        width: '100%',
         height: 400,
         alignSelf: 'center',
     },

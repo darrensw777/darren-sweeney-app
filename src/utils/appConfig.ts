@@ -3,13 +3,16 @@ const colorBlockTopColor = '#c5c5c5';
 export default {
     siteSettings: {
         fontSize: 18,
-        padding: 20
+        padding: 20,
+        name: 'Darren Sweeney'
     },
     colors: {
         primary: "#fff",
         secondary: "#fff",
         textColor: '#333',
-        bottomNavIcons: '#333'
+        bottomNavIcons: '#333',
+        border: '#ccc',
+        lightGreyBg: '#ccc'
     },
 
     bottomIcons: [
@@ -47,11 +50,11 @@ export default {
     pageHeaders: {
         home: {
             title: "Home",
-            subTitle: "Father, web developer, singer. Have a look around and send me a message if you want to contact me.",
+            subTitle: "Father, JavaScript software developer, singer. Have a look around and send me a message if you want to contact me.",
         },
         about: {
             title: "About me",
-            subTitle: "TLDR; Living in Lincolnshire, most of my work is taken up with freelance / contract projects. The main areas of work I concentrate on are web development contracts.",
+            subTitle: "Living in Lincolnshire, most of my work is taken up with freelance / contract projects. The main areas of work I concentrate on are JavaScript software development contracts.",
         },
         work: {
             title: "Work / CV",
@@ -67,7 +70,7 @@ export default {
         },
         contact: {
             title: "Contact me",
-            subTitle: "Please use the form below to contact me and I'll reply as soon as I possibly can. Thanks!",
+            subTitle: "Please choose either button below to call or email me. Thanks!",
         },
     },
     homepageColorBlocks: [{
@@ -107,23 +110,95 @@ export default {
         screenToNavigateTo: 'Contact',
     }],
     galleryImages: {
-        performing: [
+        me: [
             {
                 src: require("../../assets/images/gallery/darren.webp"),
                 active: true,
             },
-        ],
-        atSea: [
+            {
+                src: require("../../assets/images/gallery/ds1.webp"),
+                active: true,
+            },
+            {
+                src: require("../../assets/images/gallery/ds2.webp"),
+                active: true,
+            },
+            {
+                src: require("../../assets/images/gallery/ds3.webp"),
+                active: true,
+            },
+            {
+                src: require("../../assets/images/gallery/ds4.webp"),
+                active: true,
+            },
+            {
+                src: require("../../assets/images/gallery/ds5.webp"),
+                active: true,
+            },
+            {
+                src: require("../../assets/images/gallery/ds6.webp"),
+                active: true,
+            },
             {
                 src: require("../../assets/images/gallery/benidorm1.webp"),
                 active: true,
             },
+            {
+                src: require("../../assets/images/gallery/benidorm2.webp"),
+                active: true,
+            },
+            {
+                src: require("../../assets/images/gallery/benidorm3.webp"),
+                active: true,
+            },
+            {
+                src: require("../../assets/images/gallery/benidorm4.webp"),
+                active: true,
+            },
+            {
+                src: require("../../assets/images/gallery/benidorm5.webp"),
+                active: true,
+            }
         ],
-        misc: [
+        theBoys: [
             {
                 src: require("../../assets/images/gallery/zt1.webp"),
                 active: true,
             },
+            {
+                src: require("../../assets/images/gallery/zt3.webp"),
+                active: true,
+            },
+            {
+                src: require("../../assets/images/gallery/zt4.webp"),
+                active: true,
+            },
+            {
+                src: require("../../assets/images/gallery/zt5.webp"),
+                active: true,
+            }
+        ],
+        singing: [
+            {
+                src: require("../../assets/images/gallery/singing4.webp"),
+                active: true,
+            },
+            {
+                src: require("../../assets/images/gallery/singing1.webp"),
+                active: true,
+            },
+            {
+                src: require("../../assets/images/gallery/singing2.webp"),
+                active: true,
+            },
+            {
+                src: require("../../assets/images/gallery/singing3.webp"),
+                active: true,
+            },
+            {
+                src: require("../../assets/images/gallery/singing5.webp"),
+                active: true,
+            }
         ],
     },
     about: {
@@ -168,7 +243,7 @@ export default {
         ],
     },
     contact: {
-        email: "roblinacre@btinternet.com",
-        telephone: "+44 07890 739601",
+        email: "studiotime@hotmail.co.uk",
+        telephone: "+44 (0)788 496 7608",
     },
 };

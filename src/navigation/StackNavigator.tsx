@@ -28,7 +28,11 @@ const headerOptions = {
     headerStyle: {
         backgroundColor: appConfig.colors.primary,
     },
-    // headerTitle: 'Darren Sweeney',
+    tabBarStyle: {
+        backgroundColor: appConfig.colors.primary,
+        borderTopWidth: 0,
+        elevation: 0
+    },
 } as StackNavigationOptions;
 
 export const HomeStack = (): ReactElement => {
@@ -46,12 +50,12 @@ export const HomeStack = (): ReactElement => {
                 name="About"
                 component={AboutScreen}
                 options={{
-                    headerTitle: 'About',
-                    headerTitleStyle: {
-                        fontWeight: 'bold',
-                        fontSize: 30,
-                        fontFamily: 'RobotoSlab',
-                    },
+                    // headerTitle: 'About',
+                    // headerTitleStyle: {
+                    //     fontWeight: 'bold',
+                    //     fontSize: 30,
+                    //     fontFamily: 'RobotoSlab',
+                    // },
                     ...headerOptions,
                 }}
             />

@@ -1,12 +1,17 @@
-import React, { useState, useCallback } from "react";
-import { View, StyleSheet, ActivityIndicator, TouchableOpacity, Text, Pressable } from "react-native";
-import YoutubePlayer from "react-native-youtube-iframe";
-import appConfig from "../../utils/appConfig";
-import BodyText from "../BodyText";
+import React, { useState, useCallback, ReactElement, useRef } from "react";
+import { View, StyleSheet, ActivityIndicator } from "react-native";
+import YoutubePlayer, { YoutubeIframeRef } from "react-native-youtube-iframe";
+import { YoutubePlayControl } from "../../components";
 
-const RNYoutubePlayer = ({ videoId }: { videoId: string; }) => {
+// TODO, how to stop playing if screen changes or if out of viewport
+
+export const NUM_SECONDS_FF_OR_REWIND = 10;
+
+const RNYoutubePlayer = ({ videoId }: { videoId: string; }): ReactElement => {
     const [playing, setPlaying] = useState(false);
     const [videoLoaded, setVideoLoaded] = useState(false);
+
+    const playerRef = useRef<YoutubeIframeRef>(null);
 
     const onStateChange = useCallback((state: any) => {
         if (state === "ended") {
@@ -28,29 +33,13 @@ const RNYoutubePlayer = ({ videoId }: { videoId: string; }) => {
             transform: [{ scaleX: 2 }, { scaleY: 2 }],
             color: 'white',
         },
-        button: {
-            alignItems: "center",
-            justifyContent: 'center',
-            backgroundColor: !playing ? appConfig.colors.secondary : 'green',
-            padding: 10,
-            height: 80,
-            marginTop: -120, // this is only here to hide youtube controls
-            borderColor: 'black',
-            borderWidth: 1,
-            borderBottomLeftRadius: 10,
-            borderBottomRightRadius: 10,
-            borderTopWidth: 0
-        },
-        buttonText: {
-            color: !playing ? '#333' : 'white',
-            fontSize: 18
-        }
     });
 
     return (
-        <View style={{ marginBottom: 20, borderTopLeftRadius: 10, borderTopRightRadius: 10, overflow: 'hidden' }}>
+        <View style={{ marginBottom: 20, borderRadius: 10, overflow: 'hidden' }}>
             <View pointerEvents="none" style={{ position: 'relative' }}>
                 <YoutubePlayer
+                    ref={playerRef}
                     height={300}
                     play={playing}
                     videoId={videoId}
@@ -68,12 +57,9 @@ const RNYoutubePlayer = ({ videoId }: { videoId: string; }) => {
                     }}
                 />
             </View>
-            <Pressable
-                style={styles.button}
-                onPress={togglePlaying}
-            >
-                <BodyText style={styles.buttonText}>{playing ? "PAUSE" : "PLAY"}</BodyText>
-            </Pressable>
+
+            <YoutubePlayControl playerRef={playerRef} playing={playing} togglePlaying={togglePlaying} />
+
             <ActivityIndicator
                 size={'large'}
                 style={styles.loader}
