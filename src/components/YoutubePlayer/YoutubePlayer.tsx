@@ -1,7 +1,8 @@
 import React, { useState, useCallback } from "react";
-import { View, StyleSheet, ActivityIndicator, TouchableOpacity, Text } from "react-native";
+import { View, StyleSheet, ActivityIndicator, TouchableOpacity, Text, Pressable } from "react-native";
 import YoutubePlayer from "react-native-youtube-iframe";
 import appConfig from "../../utils/appConfig";
+import BodyText from "../BodyText";
 
 const RNYoutubePlayer = ({ videoId }: { videoId: string; }) => {
     const [playing, setPlaying] = useState(false);
@@ -30,19 +31,24 @@ const RNYoutubePlayer = ({ videoId }: { videoId: string; }) => {
         button: {
             alignItems: "center",
             justifyContent: 'center',
-            backgroundColor: appConfig.colors.secondary,
+            backgroundColor: !playing ? appConfig.colors.secondary : 'green',
             padding: 10,
             height: 80,
-            marginTop: -110 // this is only here to hide youtube controls
+            marginTop: -120, // this is only here to hide youtube controls
+            borderColor: 'black',
+            borderWidth: 1,
+            borderBottomLeftRadius: 10,
+            borderBottomRightRadius: 10,
+            borderTopWidth: 0
         },
         buttonText: {
-            color: 'white',
+            color: !playing ? '#333' : 'white',
             fontSize: 18
         }
     });
 
     return (
-        <View>
+        <View style={{ marginBottom: 20, borderTopLeftRadius: 10, borderTopRightRadius: 10, overflow: 'hidden' }}>
             <View pointerEvents="none" style={{ position: 'relative' }}>
                 <YoutubePlayer
                     height={300}
@@ -50,7 +56,7 @@ const RNYoutubePlayer = ({ videoId }: { videoId: string; }) => {
                     videoId={videoId}
                     onChangeState={onStateChange}
                     onReady={() => setVideoLoaded(true)}
-                    webViewStyle={{ opacity: 0.99 }}
+                    webViewStyle={{ opacity: 0.99, marginBottom: 20 }}
                 />
                 <View
                     style={{
@@ -58,16 +64,16 @@ const RNYoutubePlayer = ({ videoId }: { videoId: string; }) => {
                         width: '100%',
                         height: '15%',
                         backgroundColor: 'black',
-                        bottom: 60
+                        bottom: 72
                     }}
                 />
             </View>
-            <TouchableOpacity
+            <Pressable
                 style={styles.button}
                 onPress={togglePlaying}
             >
-                <Text style={styles.buttonText}>{playing ? "PAUSE" : "PLAY"}</Text>
-            </TouchableOpacity>
+                <BodyText style={styles.buttonText}>{playing ? "PAUSE" : "PLAY"}</BodyText>
+            </Pressable>
             <ActivityIndicator
                 size={'large'}
                 style={styles.loader}

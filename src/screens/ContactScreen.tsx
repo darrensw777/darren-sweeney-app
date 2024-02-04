@@ -1,27 +1,38 @@
-import React, { ReactElement } from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
-import { PageBanner, UrlLinkingButton } from '../components';
+import React, { ReactElement, useEffect } from 'react';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import appConfig from '../utils/appConfig';
+import { BodyText, ColorBlockLink, HeaderText } from '../components';
 
-const ContactScreen = (): ReactElement => {
+const ContactScreen = ({ navigation }: any): ReactElement => {
 
     return (
-        <ScrollView style={styles.container}>
-            <PageBanner
-                pageTitle={appConfig.pageHeaders.contact.title}
-                pageSubTitle={appConfig.pageHeaders.contact.subTitle}
-            />
-            <UrlLinkingButton type='email' />
-            <UrlLinkingButton type='telephone' />
-        </ScrollView >
+        <HeaderText style={{ fontSize: 40 }}>contactttttt screen</HeaderText>
     );
 };
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: 'black'
-    }
+
 });
 
 export default ContactScreen;
+
+// import React, { ReactElement } from 'react';
+// import { StyleSheet, Text, View } from 'react-native';
+
+// const ContactScreen = (): ReactElement => {
+
+//     return (
+//         <View style={styles.container}>
+//             <Text>Contact</Text>
+//         </View>
+//     );
+// };
+
+// const styles = StyleSheet.create({
+//     container: {
+//         flex: 1,
+//         backgroundColor: 'white'
+//     }
+// });
+
+// export default ContactScreen;

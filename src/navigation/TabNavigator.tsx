@@ -5,7 +5,8 @@ import * as NavigationBar from 'expo-navigation-bar';
 import { Entypo } from '@expo/vector-icons';
 
 import appConfig from '../utils/appConfig';
-import { Platform, StyleSheet, Text } from 'react-native';
+import { Platform, RegisteredStyle, StyleSheet, Text, TextStyle } from 'react-native';
+import { AboutScreen, ContactScreen, GalleryScreen, VideoScreen, WorkScreen } from '../screens';
 
 const Tab = createBottomTabNavigator();
 
@@ -14,6 +15,14 @@ const Tab = createBottomTabNavigator();
 // Platform.OS === 'android' && NavigationBar.setBackgroundColorAsync(appConfig.colors.primary);
 
 const TabNavigator: React.FC = () => {
+
+
+
+    const headerStyles: any = {
+        fontWeight: 'bold',
+        fontSize: 30,
+        fontFamily: 'RobotoSlab',
+    };
     return (
         <Tab.Navigator
             screenOptions={{
@@ -33,6 +42,7 @@ const TabNavigator: React.FC = () => {
                 component={HomeStack}
                 options={() => ({
                     headerTitle: '',
+                    headerTitleStyle: { ...headerStyles },
                     tabBarStyle: {
                         backgroundColor: appConfig.colors.primary,
                     },
@@ -50,9 +60,11 @@ const TabNavigator: React.FC = () => {
             />
             <Tab.Screen
                 name="AboutStack"
-                component={AboutStack}
+                component={AboutScreen}
                 options={{
                     headerTitle: 'About',
+                    headerShown: true,
+                    headerTitleStyle: { ...headerStyles },
                     tabBarIcon: ({ size }) => (
                         <>
                             <Entypo
@@ -68,9 +80,11 @@ const TabNavigator: React.FC = () => {
             />
             <Tab.Screen
                 name="WorkStack"
-                component={WorkStack}
+                component={WorkScreen}
                 options={{
                     headerTitle: 'Work',
+                    headerShown: true,
+                    headerTitleStyle: { ...headerStyles },
                     tabBarIcon: ({ size }) => (
                         <>
                             <Entypo
@@ -86,8 +100,11 @@ const TabNavigator: React.FC = () => {
             />
             <Tab.Screen
                 name="GalleryStack"
-                component={GalleryStack}
+                component={GalleryScreen}
                 options={{
+                    headerTitle: 'Gallery',
+                    headerShown: true,
+                    headerTitleStyle: { ...headerStyles },
                     tabBarIcon: ({ size }) => (
                         <>
                             <Entypo
@@ -103,8 +120,11 @@ const TabNavigator: React.FC = () => {
             />
             <Tab.Screen
                 name="VideoStack"
-                component={VideoStack}
+                component={VideoScreen}
                 options={{
+                    headerTitle: 'Video',
+                    headerShown: true,
+                    headerTitleStyle: { ...headerStyles },
                     tabBarIcon: ({ size }) => (
                         <>
                             <Entypo
@@ -120,8 +140,11 @@ const TabNavigator: React.FC = () => {
             />
             <Tab.Screen
                 name="ContactStack"
-                component={ContactStack}
+                component={ContactScreen}
                 options={{
+                    headerTitle: 'Contact',
+                    headerShown: true,
+                    headerTitleStyle: { ...headerStyles },
                     tabBarIcon: ({ size }) => (
                         <>
                             <Entypo

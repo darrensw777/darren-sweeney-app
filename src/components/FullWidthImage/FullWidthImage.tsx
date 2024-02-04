@@ -10,15 +10,19 @@ import {
 
 interface FullWidthImageProps {
     image: ImageSourcePropType;
+    padding: number;
 }
 
 const win = Dimensions.get('window');
 
-const FullWidthImage = ({ image }: FullWidthImageProps): ReactElement => {
+const FullWidthImage = ({ image, padding }: FullWidthImageProps): ReactElement => {
     const [imageLoading, setIsImageLoading] = useState(true);
     const { width: imageWidth, height: imageHeight } = Image.resolveAssetSource(image);
 
-    const ratio = win.width / imageWidth;
+    const ratio = (win.width - (padding * 2)) / imageWidth;
+
+    const imgWidth = win.width;
+    const imgHeight = imageHeight * ratio;
 
     const styles = StyleSheet.create({
         loader: {
@@ -31,10 +35,12 @@ const FullWidthImage = ({ image }: FullWidthImageProps): ReactElement => {
             color: 'white',
         },
         image: {
-            width: win.width,
-            height: imageHeight * ratio,
+            width: imgWidth,
+            height: imgHeight,
             resizeMode: "contain",
-            alignSelf: "flex-start",
+            alignSelf: "center",
+            marginLeft: padding,
+            marginBottom: padding,
         }
     });
 

@@ -21,12 +21,14 @@ const headerOptions = {
     headerShadowVisible: false, // removes header bottom border
     headerTitleStyle: {
         fontWeight: 'bold',
+        fontSize: 30,
+        fontFamily: 'RobotoSlab',
     },
     headerTitleAlign: 'center',
     headerStyle: {
         backgroundColor: appConfig.colors.primary,
     },
-    headerTitle: 'Darren Sweeney',
+    // headerTitle: 'Darren Sweeney',
 } as StackNavigationOptions;
 
 export const HomeStack = (): ReactElement => {
@@ -36,32 +38,23 @@ export const HomeStack = (): ReactElement => {
                 name="Home"
                 component={HomeScreen}
                 options={{
-                    title: 'Home',
+                    title: 'Darren Sweeney',
                     ...headerOptions,
                 }}
             />
-        </Stack.Navigator>
-    );
-};
-
-export const AboutStack = (): ReactElement => {
-    return (
-        <Stack.Navigator>
             <Stack.Screen
                 name="About"
                 component={AboutScreen}
                 options={{
-                    title: 'About',
+                    headerTitle: 'About',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                        fontSize: 30,
+                        fontFamily: 'RobotoSlab',
+                    },
                     ...headerOptions,
                 }}
             />
-        </Stack.Navigator>
-    );
-};
-
-export const WorkStack = (): ReactElement => {
-    return (
-        <Stack.Navigator>
             <Stack.Screen
                 name="Work"
                 component={WorkScreen}
@@ -70,13 +63,6 @@ export const WorkStack = (): ReactElement => {
                     ...headerOptions,
                 }}
             />
-        </Stack.Navigator>
-    );
-};
-
-export const GalleryStack = (): ReactElement => {
-    return (
-        <Stack.Navigator>
             <Stack.Screen
                 name="Gallery"
                 component={GalleryScreen}
@@ -85,13 +71,6 @@ export const GalleryStack = (): ReactElement => {
                     ...headerOptions,
                 }}
             />
-        </Stack.Navigator>
-    );
-};
-
-export const VideoStack = (): ReactElement => {
-    return (
-        <Stack.Navigator>
             <Stack.Screen
                 name="Video"
                 component={VideoScreen}
@@ -100,21 +79,90 @@ export const VideoStack = (): ReactElement => {
                     ...headerOptions,
                 }}
             />
-        </Stack.Navigator>
-    );
-};
-
-export const ContactStack = (): ReactElement => {
-    return (
-        <Stack.Navigator>
             <Stack.Screen
                 name="Contact"
                 component={ContactScreen}
                 options={{
-                    title: 'Contact',
+                    headerTitle: 'Contact',
                     ...headerOptions,
                 }}
             />
         </Stack.Navigator>
     );
 };
+
+// export const AboutStack = (): ReactElement => {
+//     return (
+//         <Stack.Navigator>
+//             <Stack.Screen
+//                 name="About"
+//                 component={AboutScreen}
+//                 options={{
+//                     title: 'About',
+//                     headerShown: false,
+//                     ...headerOptions,
+//                 }}
+//             />
+//         </Stack.Navigator>
+//     );
+// };
+
+// export const WorkStack = (): ReactElement => {
+//     return (
+//         <Stack.Navigator>
+//             <Stack.Screen
+//                 name="Work"
+//                 component={WorkScreen}
+//                 options={{
+//                     title: 'Work',
+//                     ...headerOptions,
+//                 }}
+//             />
+//         </Stack.Navigator>
+//     );
+// };
+
+// export const GalleryStack = (): ReactElement => {
+//     return (
+//         <Stack.Navigator>
+//             <Stack.Screen
+//                 name="Gallery"
+//                 component={GalleryScreen}
+//                 options={{
+//                     title: 'Gallery',
+//                     ...headerOptions,
+//                 }}
+//             />
+//         </Stack.Navigator>
+//     );
+// };
+
+// export const VideoStack = (): ReactElement => {
+//     return (
+//         <Stack.Navigator>
+//             <Stack.Screen
+//                 name="Video"
+//                 component={VideoScreen}
+//                 options={{
+//                     title: 'Video',
+//                     ...headerOptions,
+//                 }}
+//             />
+//         </Stack.Navigator>
+//     );
+// };
+
+// export const ContactStack = (): ReactElement => {
+//     return (
+//         <Stack.Navigator>
+//             <Stack.Screen
+//                 name="Contact"
+//                 component={ContactScreen}
+//                 options={{
+//                     title: 'Contact',
+//                     ...headerOptions,
+//                 }}
+//             />
+//         </Stack.Navigator>
+//     );
+// };

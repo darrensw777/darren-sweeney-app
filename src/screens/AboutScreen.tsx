@@ -1,17 +1,17 @@
 import React, { ReactElement } from 'react';
-import { ScrollView, StyleSheet, Text } from 'react-native';
-import { FullWidthImage, PageBanner } from '../components';
+import { FlatList, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { BodyText, FullWidthImage, HeaderText, Interests, PageBanner } from '../components';
 import appConfig from '../utils/appConfig';
+import { aboutGreeting } from '../utils/helpers';
 
 const AboutScreen = (): ReactElement => {
 
     const heroImage = require('../../assets/images/gallery/darren.webp');
 
-    const Copy = () => appConfig.about.copy.map((copy: { copy: string; key: string; }) => {
-        return <Text
-            style={styles.copy}
-            key={copy.key}
-        >{copy.copy}</Text>;
+    const greeting = aboutGreeting({});
+
+    const copyParas = appConfig.about.copy.map((copyItem) => {
+        return <BodyText key={copyItem.key} style={styles.copy}> {copyItem.copy}</BodyText >;
     });
 
     return (
@@ -20,8 +20,15 @@ const AboutScreen = (): ReactElement => {
                 pageTitle={appConfig.pageHeaders.about.title}
                 pageSubTitle={appConfig.pageHeaders.about.subTitle}
             />
-            <FullWidthImage image={heroImage} />
-            <Copy />
+            <FullWidthImage image={heroImage} padding={10} />
+            <HeaderText style={styles.greeting}>
+                {greeting}
+            </HeaderText>
+            {copyParas}
+            <HeaderText style={styles.greeting}>
+                {appConfig.about.interestsTitle}
+            </HeaderText>
+            <Interests />
         </ScrollView>
     );
 };
@@ -29,13 +36,15 @@ const AboutScreen = (): ReactElement => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'black',
+        backgroundColor: 'white',
     },
-    copy: {
-        fontSize: 16,
-        color: 'white',
-        padding: 12,
-        lineHeight: 22
+    copy: { fontSize: 20, color: appConfig.colors.textColor, marginBottom: 20 },
+    greeting: {
+        fontSize: 24,
+        marginVertical: 20
+    },
+    interestLists: {
+
     }
 });
 

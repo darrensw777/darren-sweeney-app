@@ -1,12 +1,17 @@
 const colorBlockTopColor = '#c5c5c5';
 
 export default {
+    siteSettings: {
+        fontSize: 18,
+        padding: 20
+    },
     colors: {
         primary: "#fff",
         secondary: "#fff",
         textColor: '#333',
         bottomNavIcons: '#333'
     },
+
     bottomIcons: [
         {
             id: "About",
@@ -42,7 +47,7 @@ export default {
     pageHeaders: {
         home: {
             title: "Home",
-            subTitle: "Father, husband, web developer, singer. Have a look around and send me a message if you want to contact me.",
+            subTitle: "Father, web developer, singer. Have a look around and send me a message if you want to contact me.",
         },
         about: {
             title: "About me",
@@ -50,7 +55,7 @@ export default {
         },
         work: {
             title: "Work / CV",
-            subTitle: "My work, please have a look at my CV below. To download a PDF version, click the link.",
+            subTitle: "My work, please have a look at my CV below. If you'd like to contact me, please use the button below",
         },
         video: {
             title: "Videos",
@@ -66,35 +71,35 @@ export default {
         },
     },
     homepageColorBlocks: [{
-        image: require('../../assets/images/home-card-images/darren.webp'),
+        image: 'about',
         color1: colorBlockTopColor,
         color2: '#139A7F',
         iconName: 'info-with-circle',
         title: 'About me',
         screenToNavigateTo: 'About',
     }, {
-        image: require('../../assets/images/home-card-images/tay1.webp'),
+        image: 'work',
         color1: colorBlockTopColor,
         color2: '#277BB4',
         iconName: 'info',
         title: 'Work / CV',
         screenToNavigateTo: 'Work',
     }, {
-        image: require('../../assets/images/home-card-images/darren2.webp'),
+        image: 'video',
         color1: colorBlockTopColor,
         color2: '#815D4E',
         iconName: 'video-camera',
         title: 'Videos',
         screenToNavigateTo: 'Video',
     }, {
-        image: require('../../assets/images/home-card-images/darren3.webp'),
+        image: 'gallery',
         color1: colorBlockTopColor,
         color2: '#BD661A',
         iconName: 'images',
         title: 'Gallery',
         screenToNavigateTo: 'Gallery',
     }, {
-        image: require('../../assets/images/home-card-images/darren4.jpeg'),
+        image: 'contact',
         color1: colorBlockTopColor,
         color2: '#B28915',
         iconName: 'email',
@@ -123,38 +128,42 @@ export default {
     },
     about: {
         heroImagePath: "../../assets/gallery/performing/gallery02.jpg",
+        morningGreeting: 'Good morning!',
+        afternoonGreeting: 'Good afternoon!',
+        eveningGreeting: 'Good evening!',
+        interestsTitle: 'Interests',
+        interests: [
+            {
+                title: 'Music',
+                copy: [
+                    'Journey', 'Steve Perry', '80s AOR', 'Simon and Garfunkel', 'Keane', 'Genesis'
+                ]
+            },
+            {
+                title: 'TV Shows',
+                copy: ['Suits', 'Reacher', 'Breaking Bad', 'The Witcher', 'Peaky Blinders', 'Mad Men',
+                    'The Boys', 'Dragons Den']
+            },
+            {
+                title: 'Movies',
+                copy: ['Goodfellas', 'Wall St', 'The Gangs of New York', 'The Wolf of Wall St'],
+            },
+            { title: 'Sports', copy: ['Golf'] },
+            { title: 'Favoutite football team', copy: ['Golf (see Sports)'] },
+            { title: 'Hobbies', copy: ['Golf', 'Music (singing)', 'VR', 'Gaming', 'Technology'] }
+        ],
         copy: [
             {
-                copy: "Rob is one of the finest vocal talents on the circuit, captivating audiences of all ages with his excellent vocal range and on-stage charisma.",
+                copy: "I currently work in the UK as a front end web developer..",
                 key: "para1",
             },
             {
-                copy: "Rob first performed at age 10 in the family show “The Linacres”. Performing at the famous Winter Gardens Blackpool in 1978. He turned professional with the band in 1984 until 1999 performing all over the UK.The Linacres headlined the summer season at The Central in 1994 & 1995, and again at The Layton Live in 1997 & 1998, both in Blackpool, England.",
+                copy: "In past lives I've been a singer, a welder, worked in retail, and I'm Series 7 Licenced (If you know, you know...)",
                 key: "para2",
             },
             {
-                copy: 'In 2000, Rob left The Linacres to create the male show- band "LIFE", fronting the 4 piece vocal group.They performed at various celebrity events including the wedding of Tracey Shaw(British actress) and also were chosen to perform at the "Kirsty Appeal" charity events run by David and Victoria Beckham and Mohamed Al-Fayed in 2002.',
+                copy: 'I strive to create web sites which are as per design, and efficient.',
                 key: "para3",
-            },
-            {
-                copy: "Rob went solo in 2005 and has performed for many cruise companies since 2006. He has performed over 200 contracts for Carnival UK, Holland America, Seabourn, Fred Olsen and Saga Prestige Cruise Holdings to name but a few, travelling around the globe.",
-                key: "para4",
-            },
-            {
-                copy: "Rob successfully headlined the summer season at The Layton Live show in Blackpool in 2010 & 2011, this time as a solo artist.",
-                key: "para5",
-            },
-            {
-                copy: "From 2010 - 2014, Rob worked as a voice coach in his recording studio at his home in the UK to children aged 10 - 16 years.",
-                key: "para6",
-            },
-            {
-                copy: "In 2017 Rob toured the state of Arizona in the US for TAD Management with duo Linacre & Knights, performing their outstanding live show singing songs from London's West End shows and broadway.",
-                key: "para7",
-            },
-            {
-                copy: "He is currently working with TAD Management, still performing on cruise ships and working corporate venues in the UK for Terry Davies and his amazing TAD family.",
-                key: "para8",
             },
         ],
     },

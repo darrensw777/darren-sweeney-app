@@ -14,3 +14,4 @@ export { default as UrlLinkingButton } from "./UrlLinkingButton";
 export { default as BodyText } from "./BodyText";
 export { default as HeaderText } from "./HeaderText";
 export { default as ColorBlockLink } from "./ColorBlockLink";
+export { default as Interests } from "./Interests";

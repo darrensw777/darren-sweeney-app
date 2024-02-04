@@ -1,4 +1,5 @@
 import { StyleSheet, Text } from "react-native";
+import appConfig from "../../utils/appConfig";
 
 interface BodyTextProps {
     children: React.ReactNode;
@@ -16,6 +17,9 @@ const BodyText = ({ children, style }: BodyTextProps) => {
 const styles = StyleSheet.create({
     bodyText: {
         fontFamily: 'Dosis',
+        color: appConfig.colors.textColor,
+        fontSize: appConfig.siteSettings.fontSize,
+        fontWeight: 'bold'
     }
 });
 

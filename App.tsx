@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import TabNavigator from './src/navigation/TabNavigator';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, View } from 'react-native';
 import appConfig from './src/utils/appConfig';
 import * as Font from "expo-font";
 import { useFonts } from 'expo-font';
@@ -16,7 +16,7 @@ const App: React.FC = () => {
             try {
                 // Pre-load fonts, make any API calls you need to do here
                 await Font.loadAsync({
-                    'Dosis': require('./assets/fonts/Dosis.ttf'),
+                    'Dosis': require('./assets/fonts/Dosis-Regular.ttf'),
                 });
             } catch (e) {
                 console.warn(e);
@@ -45,14 +45,16 @@ const App: React.FC = () => {
     }
 
     return (
-        <SafeAreaView
-            onLayout={onLayoutRootView}
-            style={{ flex: 1, backgroundColor: appConfig.colors.primary, padding: 20 }}
-        >
-            <NavigationContainer>
-                <TabNavigator />
-            </NavigationContainer>
-        </SafeAreaView>
+        <View style={{ flex: 1, padding: 20 }}>
+            <SafeAreaView
+                onLayout={onLayoutRootView}
+                style={{ flex: 1, backgroundColor: appConfig.colors.primary, padding: 20 }}
+            >
+                <NavigationContainer>
+                    <TabNavigator />
+                </NavigationContainer>
+            </SafeAreaView>
+        </View>
     );
 };
 
