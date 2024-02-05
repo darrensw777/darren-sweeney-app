@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
-import { PageBanner, YoutubePlayer } from '../components';
+import { PageBanner } from '../components';
+import YoutubePlayer from '../components/YoutubePlayer/YoutubePlayer';
 import appConfig from '../utils/appConfig';
 
 const VideoScreen = (): ReactElement => {

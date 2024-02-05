@@ -1,7 +1,7 @@
 import React, { useState, useCallback, ReactElement, useRef } from "react";
 import { View, StyleSheet, ActivityIndicator } from "react-native";
 import YoutubePlayer, { YoutubeIframeRef } from "react-native-youtube-iframe";
-import { YoutubePlayControl } from "../../components";
+import { YoutubePlayControl } from "../../components/";
 
 // TODO, how to stop playing if screen changes or if out of viewport
 
