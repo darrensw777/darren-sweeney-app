@@ -12,7 +12,8 @@ export default {
         textColor: '#333',
         bottomNavIcons: '#333',
         border: '#ccc',
-        lightGreyBg: '#ccc'
+        lightGreyBg: '#ccc',
+        white: '#fff'
     },
 
     bottomIcons: [

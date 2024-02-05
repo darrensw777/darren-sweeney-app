@@ -1,23 +1,20 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { AboutStack, ContactStack, GalleryStack, HomeStack, VideoStack, WorkStack } from './StackNavigator';
-import * as NavigationBar from 'expo-navigation-bar';
+import { HomeStack } from './StackNavigator';
 import { Entypo } from '@expo/vector-icons';
+import * as NavigationBar from 'expo-navigation-bar';
 
 import appConfig from '../utils/appConfig';
-import { Platform, RegisteredStyle, StyleSheet, Text, TextStyle } from 'react-native';
+import { Platform, StyleSheet, Text } from 'react-native';
 import { AboutScreen, ContactScreen, GalleryScreen, VideoScreen, WorkScreen } from '../screens';
 
 const Tab = createBottomTabNavigator();
 
 // This sets the bottom tab backgroud color, the device tab
 // not typical bottom tab used for App navigation.
-// Platform.OS === 'android' && NavigationBar.setBackgroundColorAsync(appConfig.colors.primary);
+Platform.OS === 'android' && NavigationBar.setBackgroundColorAsync(appConfig.colors.primary);
 
 const TabNavigator: React.FC = () => {
-
-
-
     const headerStyles: any = {
         fontWeight: 'bold',
         fontSize: 30,
@@ -33,12 +30,11 @@ const TabNavigator: React.FC = () => {
                     borderTopWidth: 0,
                     elevation: 0
                 },
-                tabBarInactiveTintColor: '#fff',
-                tabBarActiveTintColor: '#fff',
+                tabBarInactiveTintColor: appConfig.colors.white,
+                tabBarActiveTintColor: appConfig.colors.white,
                 headerShadowVisible: false,
                 headerTitleAlign: 'center',
                 headerTitleStyle: {
-                    // fontWeight: 'bold',
                     fontSize: 30,
                     fontFamily: 'RobotoSlab',
                 },
@@ -48,8 +44,6 @@ const TabNavigator: React.FC = () => {
                 name="HomeStack"
                 component={HomeStack}
                 options={() => ({
-                    // headerTitle: '',
-                    // headerTitleStyle: { ...headerStyles },
                     tabBarStyle: {
                         backgroundColor: appConfig.colors.primary,
                     },
